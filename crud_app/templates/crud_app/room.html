@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% block content %}
+<h1>Room Template</h1>
+<blockquote>{{ room_case.name }}</blockquote>
+<blockquote>{{ room_case.description }}</blockquote>
+    <p style="color: #006b1b">Conversation </p>
+    <hr/>
+    {% for msg in room_messages %}
+        <code>{{ msg.user }}  {{ msg.created | timesince}}</code>
+        <p>{{ msg.body }}</p>
+    {% endfor %}
+{% endblock %}
+</html>

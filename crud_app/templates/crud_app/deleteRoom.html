@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+{% block content %}
+<form method="POST" action="">
+    {% csrf_token %}
+    <h4>Are you sure to delete {{ obj }}</h4>
+    <a href="{% url 'home' %}" >Go Back</a>
+    <input type="submit" value="confirm" />
+</form>
+{% endblock %}
+
+</body>
+</html>
